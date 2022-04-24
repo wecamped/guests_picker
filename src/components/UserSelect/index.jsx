@@ -4,7 +4,7 @@ import createMomentsSDK from "@livechat/moments-sdk";
 const UserSelect = () => {
   const [state, setState] = useState({
     adult: {
-      title: "Adult",
+      title: "Adults",
       subTitle: "Ages  13 or above",
       count: 1,
       name: "adult",
@@ -37,14 +37,14 @@ const UserSelect = () => {
       isFragile: true,
     }).then((momentsSDK) => {
       // console.log(momentsSDK)
-      momentsSDK.sendMessage({ text: state });
+      momentsSDK.sendMessage({ text: "test" });
       momentsSDK.close();
     });
   };
   return (
     <section>
       <div className="cs_container text_center">
-        <h2 className="sec_heading">Add Guests.</h2>
+        <h2 className="sec_heading">Add Guests</h2>
         <hr />
         <br />
         <div className="cs_date_picker_card">
