@@ -4,7 +4,7 @@ import createMomentsSDK from "@livechat/moments-sdk";
 const UserSelect = () => {
   const [state, setState] = useState({
     adult: {
-      title: "Adult",
+      title: "Adults",
       subTitle: "Ages  13 or above",
       count: 1,
       name: "adult",
