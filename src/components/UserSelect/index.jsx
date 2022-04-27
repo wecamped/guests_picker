@@ -65,9 +65,6 @@ const UserSelect = () => {
   return (
     <section>
       <div className="cs_container text_center">
-        <h2 className="sec_heading">Add Guests.</h2>
-        <hr />
-        <br />
         <div className="cs_date_picker_card">
           <div className="age_wrapper">
             {/*  */}
