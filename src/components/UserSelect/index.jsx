@@ -109,7 +109,7 @@ const UserSelect = () => {
           </div>
           <div className="cs_row justify_content_end">
             <button className="cs_btn_main" onClick={getDatePick}>
-              Finish
+              Select
             </button>
           </div>
         </div>
