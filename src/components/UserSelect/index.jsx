@@ -1,7 +1,8 @@
-import { useState } from "react";
+import React, { useState,useEffect } from "react";
 import createMomentsSDK from "@livechat/moments-sdk";
 
 const UserSelect = () => {
+  const [momentsSDK, setmomentsSDK] = useState(null);
   const [state, setState] = useState({
     adult: {
       title: "Adults",
@@ -29,22 +30,37 @@ const UserSelect = () => {
     },
   });
 
-  // get and send data
-  const getDatePick = () => {
-    let val = JSON.stringify(state);
-
-    // to parse 
-    let val0 = JSON.parse(val);
-
+  useEffect(()=>{
     createMomentsSDK({
       title: "My App",
       icon: "icon url",
       isFragile: true,
-    }).then((momentsSDK) => {
-      // console.log(momentsSDK)
-      momentsSDK.sendMessage({ text: val });
-      momentsSDK.close();
+    }).then((mSdK) => {
+      setmomentsSDK(mSdK)
     });
+  },[])
+
+  // get and send data
+  const getDatePick = () => {
+   // let val = JSON.stringify(state);
+
+    // to parse 
+    //let val0 = JSON.parse(val);
+    console.log(state)
+    let x=`Adults ${state.adult.count}, Children ${state.children.count}, infants ${state.infants.count}, Pets ${state.pets.count} `
+    console.log(x)
+    // createMomentsSDK({
+    //   title: "My App",
+    //   icon: "icon url",
+    //   isFragile: true,
+    // }).then((momentsSDK) => {
+      // console.log(momentsSDK)
+      if(momentsSDK){
+      momentsSDK.sendMessage({ text: x });
+      momentsSDK.close();
+      }
+
+   
   };
   return (
     <section>
