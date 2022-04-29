@@ -47,7 +47,7 @@ const UserSelect = () => {
     // to parse 
     //let val0 = JSON.parse(val);
     console.log(state)
-    let x=`Adults ${state.adult.count}, Children ${state.children.count}, infants ${state.infants.count}, Pets ${state.pets.count} `
+    let x=`Adults ${state.adult.count}, Children ${state.children.count}, Infants ${state.infants.count}, Pets ${state.pets.count} `
     console.log(x)
     // createMomentsSDK({
     //   title: "My App",
